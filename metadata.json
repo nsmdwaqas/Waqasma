@@ -1,0 +1,6 @@
+{
+  "name": "Mohammed Waqas & Asma Shajer — Royal Wedding Invitation",
+  "description": "Royal wedding celebration of Mohammed Waqas and Asma Shajer. Featuring Apple-inspired AMOLED glassmorphism, live countdown floater, multilingual itinerary, and Google Maps navigations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
