@@ -36,7 +36,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
 
   const handleWhatsAppShare = () => {
     const text = encodeURIComponent(
-      `${t.whatsappMessage}\n\n💍 *Mohammed Waqas & Asma Shajer*\n🗓️ *31st December 2026*\n📍 Nikkah & Valima Celebrations\n\n🔗 ${currentUrl}`
+      `${t.whatsappMessage}\n\n💍 *Mohammed Waqas & Asma Shajer*\n🗓️ *31st December 2026*\n\n\n🔗 ${currentUrl}`
     );
     window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
   };

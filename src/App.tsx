@@ -248,9 +248,11 @@ export default function App() {
                 <p className={`text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#D4AF37]/80 ${displayKickerFont}`}>
                   {t.invitationTitle}
                 </p>
-                <p className="text-[11px] sm:text-xs text-neutral-300 mt-1 max-w-xs mx-auto leading-relaxed">
-                  {t.togetherWithFamilies}
-                </p>
+                {t.togetherWithFamilies && (
+                  <p className="text-[11px] sm:text-xs text-neutral-300 mt-1 max-w-xs mx-auto leading-relaxed">
+                    {t.togetherWithFamilies}
+                  </p>
+                )}
               </div>
 
               {/* Middle Centerpiece: Prominent Couple Names with Fixed Spacing */}
@@ -340,12 +342,14 @@ export default function App() {
                   <Calendar className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <h3 className={`${eventTitleFont} text-xs sm:text-sm text-[#FDE68A] tracking-wider uppercase`}>
+                  <h3 className={`${eventTitleFont} text-xs sm:text-sm text-[#FDE68A] tracking-wider uppercase font-semibold`}>
                     {t.weddingDateHeader}
                   </h3>
-                  <p className="text-[10px] text-neutral-400">
-                    {t.sameDayCelebrations}
-                  </p>
+                  {t.sameDayCelebrations && (
+                    <p className="text-[10px] text-neutral-400">
+                      {t.sameDayCelebrations}
+                    </p>
+                  )}
                 </div>
               </div>
 

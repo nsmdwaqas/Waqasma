@@ -32,9 +32,6 @@ export const CompactItinerary: React.FC<CompactItineraryProps> = ({ lang }) => {
             <h3 className="font-cinzel text-xs sm:text-sm font-bold text-[#FDE68A] tracking-wider uppercase">
               {t.weddingDateHeader}
             </h3>
-            <p className="text-[10px] text-neutral-400">
-              Same Day Celebrations · 31 · 12 · 2026
-            </p>
           </div>
         </div>
 
