@@ -38,6 +38,11 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
     return () => clearInterval(timer);
   }, [targetTime]);
 
+  const isUrdu = lang === 'ur';
+  const isTamil = lang === 'ta';
+  const headerFont = isUrdu ? 'font-urdu font-bold' : isTamil ? 'font-tamil font-bold' : 'font-cinzel font-semibold';
+  const unitLabelFont = isUrdu ? 'font-urdu text-[11px]' : isTamil ? 'font-tamil text-[11px]' : 'text-[10px] uppercase font-cinzel';
+
   return (
     <div className="fixed bottom-4 left-4 z-40 max-w-[calc(100vw-2rem)] transition-all duration-300">
       {/* Expanded Details Card */}
@@ -46,7 +51,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
           <div className="flex items-center justify-between pb-3 border-b border-white/[0.08] mb-3">
             <div className="flex items-center gap-2 text-[#D4AF37]">
               <Clock className="w-4 h-4" />
-              <span className="font-cinzel text-xs font-semibold tracking-wider uppercase">
+              <span className={`text-xs tracking-wider uppercase ${headerFont}`}>
                 {t.weddingDateHeader}
               </span>
             </div>
@@ -65,7 +70,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
               <span className="block font-cinzel text-xl sm:text-2xl font-bold text-white tabular-nums">
                 {timeLeft.days}
               </span>
-              <span className="block text-[10px] text-neutral-400 uppercase tracking-wider mt-0.5">
+              <span className={`block text-neutral-400 tracking-wider mt-0.5 ${unitLabelFont}`}>
                 {t.countdownDays}
               </span>
             </div>
@@ -73,7 +78,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
               <span className="block font-cinzel text-xl sm:text-2xl font-bold text-white tabular-nums">
                 {String(timeLeft.hours).padStart(2, '0')}
               </span>
-              <span className="block text-[10px] text-neutral-400 uppercase tracking-wider mt-0.5">
+              <span className={`block text-neutral-400 tracking-wider mt-0.5 ${unitLabelFont}`}>
                 {t.countdownHours}
               </span>
             </div>
@@ -81,7 +86,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
               <span className="block font-cinzel text-xl sm:text-2xl font-bold text-white tabular-nums">
                 {String(timeLeft.minutes).padStart(2, '0')}
               </span>
-              <span className="block text-[10px] text-neutral-400 uppercase tracking-wider mt-0.5">
+              <span className={`block text-neutral-400 tracking-wider mt-0.5 ${unitLabelFont}`}>
                 {t.countdownMinutes}
               </span>
             </div>
@@ -89,7 +94,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
               <span className="block font-cinzel text-xl sm:text-2xl font-bold text-[#D4AF37] tabular-nums">
                 {String(timeLeft.seconds).padStart(2, '0')}
               </span>
-              <span className="block text-[10px] text-neutral-400 uppercase tracking-wider mt-0.5">
+              <span className={`block text-neutral-400 tracking-wider mt-0.5 ${unitLabelFont}`}>
                 {t.countdownSeconds}
               </span>
             </div>
@@ -98,7 +103,9 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
           {/* Quick Action */}
           <button
             onClick={downloadIcsCalendar}
-            className="w-full mt-2 py-2 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37]/20 to-[#10B981]/20 hover:from-[#D4AF37]/30 hover:to-[#10B981]/30 border border-[#D4AF37]/40 text-xs font-medium text-white flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            className={`w-full mt-2 py-2 px-3 rounded-xl bg-gradient-to-r from-[#D4AF37]/20 to-[#10B981]/20 hover:from-[#D4AF37]/30 hover:to-[#10B981]/30 border border-[#D4AF37]/40 text-xs font-medium text-white flex items-center justify-center gap-2 transition-colors cursor-pointer ${
+              isUrdu ? 'font-urdu' : isTamil ? 'font-tamil' : ''
+            }`}
           >
             <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span>{t.addToCalendar}</span>
@@ -109,7 +116,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
       {/* Dynamic Floater Pill */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2.5 px-4 py-2.5 rounded-full apple-glass-pill hover:bg-white/[0.12] transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.6)] cursor-pointer group active:scale-95 border border-[#D4AF37]/30"
+        className="flex items-center gap-2.5 px-4 py-2.5 rounded-full apple-glass-pill hover:bg-white/[0.12] transition-all duration-150 shadow-[0_8px_30px_rgba(0,0,0,0.6)] cursor-pointer group active:scale-95 border border-[#D4AF37]/30 touch-manipulation"
         aria-label="Toggle day countdown timer details"
       >
         <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37]">
@@ -119,7 +126,7 @@ export const CountdownFloater: React.FC<CountdownFloaterProps> = ({ lang }) => {
           <span className="font-cinzel text-base font-bold gold-gradient-text tabular-nums">
             {timeLeft.days}
           </span>
-          <span className="text-xs font-medium text-neutral-200">
+          <span className={`text-xs font-medium text-neutral-200 ${isUrdu ? 'font-urdu' : isTamil ? 'font-tamil' : ''}`}>
             {t.countdownDaysLeft}
           </span>
         </div>

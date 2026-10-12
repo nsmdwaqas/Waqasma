@@ -47,8 +47,17 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
     setTimeout(() => setCopied(false), 2200);
   };
 
+  const isUrdu = lang === 'ur';
+  const isTamil = lang === 'ta';
+  const titleFont = isUrdu ? 'font-urdu font-bold' : isTamil ? 'font-tamil font-bold' : 'font-playfair font-bold';
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-in fade-in duration-200">
+    <div
+      dir={isUrdu ? 'rtl' : 'ltr'}
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-in fade-in duration-200 ${
+        isUrdu ? 'font-urdu' : isTamil ? 'font-tamil' : ''
+      }`}
+    >
       <div className="relative w-full max-w-sm sm:max-w-md rounded-3xl apple-glass border border-[#D4AF37]/30 p-6 sm:p-8 shadow-[0_30px_90px_rgba(0,0,0,0.9)] text-center">
         {/* Close button */}
         <button
@@ -64,11 +73,11 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
           <div className="w-10 h-10 rounded-2xl bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center mb-3">
             <Share2 className="w-5 h-5" />
           </div>
-          <h3 className="font-playfair text-xl sm:text-2xl font-bold text-white">
+          <h3 className={`${titleFont} text-xl sm:text-2xl text-white`}>
             {t.shareInvite}
           </h3>
-          <p className="text-xs text-neutral-400 mt-1 max-w-xs">
-            Circulate this sacred invitation to family and friends via WhatsApp or scan the QR code.
+          <p className="text-xs text-neutral-400 mt-1 max-w-xs leading-relaxed">
+            {t.shareModalDesc}
           </p>
         </div>
 
@@ -89,8 +98,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
           </div>
         </div>
 
-        <p className="text-[11px] text-[#D4AF37] font-medium tracking-wide uppercase mb-6 font-cinzel">
-          Scan with any camera or WhatsApp
+        <p className="text-[11px] text-[#D4AF37] font-medium tracking-wide uppercase mb-6">
+          {t.scanQrInstruction}
         </p>
 
         {/* Action Buttons */}
@@ -101,7 +110,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
             className="w-full h-12 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:opacity-95 text-white font-semibold text-xs flex items-center justify-center gap-2.5 shadow-lg shadow-[#25D366]/20 transition-transform active:scale-[0.98] cursor-pointer"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>Share directly on WhatsApp</span>
+            <span>{t.shareOnWhatsappBtn}</span>
           </button>
 
           {/* Copy Link Button */}

@@ -27,11 +27,11 @@ export const LanguageFloater: React.FC<LanguageFloaterProps> = ({ currentLang, o
               <button
                 key={l.code}
                 onClick={() => onSelectLang(l.code)}
-                className={`px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer ${
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150 cursor-pointer touch-manipulation active:scale-95 ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA771C] text-[#1F1404] font-semibold shadow-sm scale-105'
-                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.06]'
-                } ${l.code === 'ur' ? 'font-urdu text-[11px] leading-tight' : l.code === 'ta' ? 'font-tamil text-[11px]' : ''}`}
+                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA771C] text-[#1F1404] font-semibold shadow-md scale-100'
+                    : 'text-neutral-300 hover:text-white hover:bg-white/[0.08]'
+                } ${l.code === 'ur' ? 'font-urdu text-[12px] leading-tight' : l.code === 'ta' ? 'font-tamil text-[11px]' : ''}`}
                 aria-pressed={isActive}
                 title={l.native}
               >
