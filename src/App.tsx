@@ -291,17 +291,21 @@ export default function App() {
                     <span className="font-semibold text-white">{t.brideFatherName}</span>
                   </p>
                 </div>
+
+                {/* Auspicious Wedding Date (Above the Divider Line) */}
+                <div className="pt-2 pb-0.5">
+                  <p className={`${displayKickerFont} text-xs sm:text-sm font-bold text-[#FDE68A] tracking-wider`}>
+                    {t.weddingDateHeader}
+                  </p>
+                </div>
               </div>
 
-              {/* Quranic Verse Inscription & Auspicious Date */}
-              <div className="shrink-0 text-center pt-2 border-t border-white/[0.08]">
-                <p className={`${displayKickerFont} text-xs font-bold text-[#FDE68A] tracking-wider mb-0.5`}>
-                  {t.weddingDateHeader}
-                </p>
-                <p className="font-arabic text-xs text-[#E8C568] leading-relaxed">
+              {/* Quranic Verse Inscription (Below the Divider Line) */}
+              <div className="shrink-0 text-center pt-2.5 pb-0.5 border-t border-white/[0.08] space-y-1">
+                <p className="font-arabic text-xs sm:text-sm text-[#E8C568] leading-relaxed">
                   {t.quranicVerseArabic}
                 </p>
-                <p className="text-[10px] sm:text-[11px] text-neutral-400 italic mt-0.5 line-clamp-2">
+                <p className="text-[10px] sm:text-[11px] text-neutral-400 italic line-clamp-2 leading-relaxed">
                   &ldquo;{t.quranicVerseTranslation}&rdquo;
                 </p>
               </div>
