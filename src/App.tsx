@@ -224,32 +224,6 @@ export default function App() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Elegant Apple-Style Card Switcher Segment Pill */}
-          <div className="flex items-center gap-1 p-1 rounded-full apple-glass-pill border border-white/[0.12] shadow-lg mb-2.5 z-20 shrink-0">
-            <button
-              onClick={() => flipCard(false)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer touch-manipulation active:scale-95 flex items-center gap-1.5 ${
-                !isFlipped
-                  ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA771C] text-[#1F1404] shadow-sm'
-                  : 'text-neutral-400 hover:text-white hover:bg-white/[0.05]'
-              } ${isRtl ? 'font-urdu' : lang === 'ta' ? 'font-tamil' : ''}`}
-            >
-              <Heart className="w-3 h-3" />
-              <span>{t.cardCouple}</span>
-            </button>
-            <button
-              onClick={() => flipCard(true)}
-              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer touch-manipulation active:scale-95 flex items-center gap-1.5 ${
-                isFlipped
-                  ? 'bg-gradient-to-r from-[#10B981] to-[#059669] text-white shadow-sm'
-                  : 'text-neutral-400 hover:text-white hover:bg-white/[0.05]'
-              } ${isRtl ? 'font-urdu' : lang === 'ta' ? 'font-tamil' : ''}`}
-            >
-              <Calendar className="w-3 h-3" />
-              <span>{t.cardItinerary}</span>
-            </button>
-          </div>
-
           {/* 3D Card Flipping Canvas with Rock-Solid Fixed Height */}
           <div
             className={`relative w-full h-[540px] max-h-[calc(100svh-5rem)] min-h-[460px] transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] transform-style-3d ${
