@@ -61,6 +61,10 @@ export const CompactItinerary: React.FC<CompactItineraryProps> = ({ lang }) => {
               <p className="font-playfair text-sm sm:text-base font-bold text-white">
                 {t.nikkahTime}
               </p>
+              <p className="text-[11px] text-[#6EE7B7] font-medium flex items-center gap-1 mt-0.5">
+                <MapPin className="w-2.5 h-2.5 text-[#10B981] shrink-0" />
+                <span>{t.nikkahVenue}</span>
+              </p>
             </div>
 
             <button
@@ -104,6 +108,10 @@ export const CompactItinerary: React.FC<CompactItineraryProps> = ({ lang }) => {
                 <span className="text-[10px] text-neutral-400 font-normal ml-1">
                   (After Zuhar)
                 </span>
+              </p>
+              <p className="text-[11px] text-[#FDE68A] font-medium flex items-center gap-1 mt-0.5">
+                <MapPin className="w-2.5 h-2.5 text-[#D4AF37] shrink-0" />
+                <span>{t.valimaVenue}</span>
               </p>
             </div>
 

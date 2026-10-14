@@ -21,9 +21,11 @@ export interface TranslationData {
   weddingDateFormatted: string;
   nikkahTitle: string;
   nikkahTime: string;
+  nikkahVenue: string;
   nikkahDesc: string;
   valimaTitle: string;
   valimaTime: string;
+  valimaVenue: string;
   valimaDesc: string;
   countdownDaysLeft: string;
   countdownDays: string;
@@ -69,8 +71,8 @@ export interface TranslationData {
 export const translations: Record<Language, TranslationData> = {
   en: {
     bismillah: "In the Name of Allah, the Most Gracious, the Most Merciful",
-    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
-    quranicVerseTranslation: "And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has placed love and mercy between you.",
+    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا",
+    quranicVerseTranslation: "And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them.",
     quranicReference: "Surah Ar-Rum · 30:21",
     invitationTitle: "The Royal Wedding",
     invitationSubtitle: "Celebration of Holy Matrimony",
@@ -88,9 +90,11 @@ export const translations: Record<Language, TranslationData> = {
     weddingDateFormatted: "31 · 12 · 2026",
     nikkahTitle: "Nikkah Ceremony",
     nikkahTime: "11:45 AM",
+    nikkahVenue: "Choti Masjid, Ambur",
     nikkahDesc: "The sacred solemnization of marriage according to the Sunnah of Prophet Muhammad (ﷺ).",
     valimaTitle: "Valima Reception",
     valimaTime: "12:00 PM (After Zuhar Salah)",
+    valimaVenue: "Buwa Shaadi Mahal, Ambur",
     valimaDesc: "The wedding feast celebration with family, loved ones, and esteemed guests.",
     countdownDaysLeft: "Days to Go",
     countdownDays: "Days",
@@ -125,8 +129,8 @@ export const translations: Record<Language, TranslationData> = {
     cardCouple: "Couple",
     cardItinerary: "Itinerary & Venues",
     shareBtnLabel: "Share",
-    fathersCombinedNames: "Janab Natamkar Saifullah",
-    solicitBlessings: "Cordially solicits your gracious presence, blessings & prayers",
+    fathersCombinedNames: "We cordially solicit your gracious presence, blessings & prayers",
+    solicitBlessings: "",
     sameDayCelebrations: "",
     shareModalDesc: "Circulate this sacred invitation to family and friends via WhatsApp or scan the QR code.",
     scanQrInstruction: "Scan with any camera or WhatsApp",
@@ -134,8 +138,8 @@ export const translations: Record<Language, TranslationData> = {
   },
   ur: {
     bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
-    quranicVerseTranslation: "اور اُس کی نشانیوں میں سے یہ ہے کہ اُس نے تمہارے لیے تمہاری ہی جنس سے جوڑے بنائے تاکہ تم اُن کے پاس سکون حاصل کرو اور تمہارے درمیان محبت اور رحمت پیدا کر دی۔",
+    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا",
+    quranicVerseTranslation: "اور اُس کی نشانیوں میں سے یہ ہے کہ اُس نے تمہارے لیے تمہاری ہی جنس سے جوڑے بنائے تاکہ تم اُن کے پاس سکون حاصل کرو۔",
     quranicReference: "سورة الروم · ٣٠:٢١",
     invitationTitle: "دعوت نامہ نکاح و ولیمہ",
     invitationSubtitle: "تقریبِ مسرور و مبارک",
@@ -153,9 +157,11 @@ export const translations: Record<Language, TranslationData> = {
     weddingDateFormatted: "۳۱ · ۱۲ · ۲۰۲۶",
     nikkahTitle: "مبارک تقریبِ نکاح",
     nikkahTime: "صبح ۱۱:۴۵ بجے",
+    nikkahVenue: "چھوٹی مسجد، امبور",
     nikkahDesc: "سنتِ نبوی (ﷺ) کے مطابق تقریبِ نکاح کا پاکیزہ انعقاد۔",
     valimaTitle: "تقریبِ ولیمہ",
     valimaTime: "دوپہر ۱۲:۰۰ بجے (بعد نمازِ ظہر)",
+    valimaVenue: "بووا شادی محل، امبور",
     valimaDesc: "معزز مہمانوں کے ساتھ پرمسرت ضیافتِ ولیمہ۔",
     countdownDaysLeft: "دن باقی ہیں",
     countdownDays: "دن",
@@ -190,8 +196,8 @@ export const translations: Record<Language, TranslationData> = {
     cardCouple: "دولہا دلہن",
     cardItinerary: "پروگرام و لوکیشن",
     shareBtnLabel: "شیئر",
-    fathersCombinedNames: "جناب ناتم کار سیف اللہ",
-    solicitBlessings: "آپ کی معزز شرکت، دعاؤں اور نیک تمناؤں کے پرخلوص متمنی ہیں",
+    fathersCombinedNames: "ہم آپ کی معزز شرکت، دعاؤں اور نیک تمناؤں کے پرخلوص متمنی ہیں",
+    solicitBlessings: "",
     sameDayCelebrations: "",
     shareModalDesc: "یہ مبارک دعوت نامہ اپنے اہل خانہ اور دوستوں کو واٹس ایپ پر بھیجیں یا کیو آر کوڈ اسکین کریں۔",
     scanQrInstruction: "کسی بھی کیمرے یا واٹس ایپ سے اسکین کریں",
@@ -199,8 +205,8 @@ export const translations: Record<Language, TranslationData> = {
   },
   ta: {
     bismillah: "அளவற்ற அருளாளனும் நிகரற்ற அன்புடையோனுமாகிய அல்லாஹ்வின் திருப்பெயரால்",
-    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
-    quranicVerseTranslation: "நீங்கள் அவர்களிடம் அமைதி பெறுவதற்காக உங்கள் இனத்திலிருந்தே உங்களுக்காக ஜோடிகளைப் படைத்து, உங்களிடையே அன்பையும் கருணையையும் உண்டாக்கியிருப்பதும் அவனது அத்தாட்சிகளில் உள்ளதாகும்.",
+    quranicVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا",
+    quranicVerseTranslation: "நீங்கள் அவர்களிடம் அமைதி பெறுவதற்காக உங்கள் இனத்திலிருந்தே உங்களுக்காக ஜோடிகளைப் படைத்திருப்பதும் அவனது அத்தாட்சிகளில் உள்ளதாகும்.",
     quranicReference: "சூரா அர்-ரூம் · 30:21",
     invitationTitle: "நிக்காஹ் & வலீமா அழைப்பிதழ்",
     invitationSubtitle: "திருமண மங்கல அழைப்பிதழ்",
@@ -218,9 +224,11 @@ export const translations: Record<Language, TranslationData> = {
     weddingDateFormatted: "31 · 12 · 2026",
     nikkahTitle: "புனித நிக்காஹ் வைபவம்",
     nikkahTime: "முற்பகல் 11:45 மணி",
+    nikkahVenue: "சோட்டி மஸ்ஜித், ஆம்பூர்",
     nikkahDesc: "நபிகள் நாயகம் (ஸல்) அவர்களின் புனித சுன்னத்தின்படி நிக்காஹ் வைபவம் நடைபெறும்.",
     valimaTitle: "வலீமா வரவேற்பு விருந்து",
     valimaTime: "நண்பகல் 12:00 மணி (ளுஹர் தொழுகைக்குப் பின்)",
+    valimaVenue: "புவா ஷாதி மஹால், ஆம்பூர்",
     valimaDesc: "உற்றார், உறவினர்கள் மற்றும் நண்பர்களுக்கான திருமண விருந்து உபசரிப்பு.",
     countdownDaysLeft: "நாட்கள் மீதமுள்ளன",
     countdownDays: "நாட்கள்",
@@ -255,8 +263,8 @@ export const translations: Record<Language, TranslationData> = {
     cardCouple: "மணமக்கள்",
     cardItinerary: "நிகழ்வுகள் & வழிகள்",
     shareBtnLabel: "பகிர்",
-    fathersCombinedNames: "ஜனாப் நடம்கார் சைஃபுல்லாஹ்",
-    solicitBlessings: "தங்களின் நல்வருகையையும் வாழ்த்துக்களையும் அன்போடு வேண்டுகிறோம்",
+    fathersCombinedNames: "தங்களின் நல்வருகையையும் ஆசீர்வாதங்களையும் அன்போடு வேண்டுகிறோம்",
+    solicitBlessings: "",
     sameDayCelebrations: "",
     shareModalDesc: "இந்தத் திருமண அழைப்பிதழை வாட்ஸ்அப் அல்லது QR குறியீடு மூலம் சுற்றத்தாருடன் பகிருங்கள்.",
     scanQrInstruction: "கேமரா அல்லது வாட்ஸ்அப் மூலம் ஸ்கேன் செய்யவும்",

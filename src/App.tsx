@@ -370,7 +370,12 @@ export default function App() {
                     </div>
                   </div>
 
-                  <p className="text-xs text-neutral-300 leading-relaxed mb-2.5">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#6EE7B7] mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+                    <span>{t.nikkahVenue}</span>
+                  </div>
+
+                  <p className="text-[11px] sm:text-xs text-neutral-300 leading-relaxed mb-2.5">
                     {t.nikkahDesc}
                   </p>
 
@@ -420,7 +425,12 @@ export default function App() {
                     </div>
                   </div>
 
-                  <p className="text-xs text-neutral-300 leading-relaxed mb-2.5">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#FDE68A] mb-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                    <span>{t.valimaVenue}</span>
+                  </div>
+
+                  <p className="text-[11px] sm:text-xs text-neutral-300 leading-relaxed mb-2.5">
                     {t.valimaDesc}
                   </p>
 
@@ -456,13 +466,11 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Family Host Tribute - Prominently Displayed where Calendar was */}
-              <div className="pt-2 pb-0.5 border-t border-white/[0.08] text-center shrink-0">
-                <p className={`text-xs font-bold text-[#FDE68A] tracking-wider ${displayHeadingFont}`}>
+              {/* Host Solicitation Line (Single Line) */}
+              <div className="pt-2 pb-0.5 border-t border-white/[0.08] text-center shrink-0 px-1">
+                <p className={`text-[10.5px] sm:text-xs text-[#FDE68A] font-medium tracking-normal sm:tracking-wide leading-normal ${lang === 'ur' ? 'font-urdu' : lang === 'ta' ? 'font-tamil' : 'font-playfair italic sm:not-italic'}`}>
                   {t.fathersCombinedNames}
-                </p>
-                <p className="text-[10px] text-neutral-300 mt-0.5 leading-normal">
-                  {t.solicitBlessings}
+                  {t.solicitBlessings ? ` ${t.solicitBlessings}` : ''}
                 </p>
               </div>
 
