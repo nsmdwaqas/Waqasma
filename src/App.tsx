@@ -168,7 +168,10 @@ export default function App() {
         <EnvelopeReveal onOpen={handleOpenEnvelope} lang={lang} />
       )}
 
-      {/* Persistent Floating Controls (4 Screen Corners) */}
+      {/* Multilingual Floater (Top Right - Accessible at all times) */}
+      <LanguageFloater currentLang={lang} onSelectLang={setLang} />
+
+      {/* Persistent Floating Controls (Screen Corners after unboxing) */}
       {hasOpenedEnvelope && (
         <>
           {/* Day Countdown Floater (Bottom Left) */}
@@ -176,9 +179,6 @@ export default function App() {
 
           {/* Quick Share / QR Floater (Bottom Right) */}
           <ShareFloater onClick={() => setIsShareModalOpen(true)} lang={lang} />
-
-          {/* Multilingual Floater (Top Right) */}
-          <LanguageFloater currentLang={lang} onSelectLang={setLang} />
 
           {/* Audio & Replay Floating Controls (Top Left) */}
           <div className="fixed top-4 left-4 z-40 flex items-center gap-2">

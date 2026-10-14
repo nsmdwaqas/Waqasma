@@ -123,8 +123,8 @@ export const EnvelopeReveal: React.FC<EnvelopeRevealProps> = ({ onOpen, lang }) 
                   <span className="font-cinzel text-xl sm:text-2xl font-bold text-[#3B2606] tracking-tighter drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)]">
                     W & A
                   </span>
-                  <span className="text-[9px] uppercase tracking-widest text-[#4A320A] font-semibold mt-0.5 font-cinzel">
-                    Nikkah
+                  <span className="text-[8px] sm:text-[9px] uppercase tracking-widest text-[#4A320A] font-semibold mt-0.5 font-cinzel">
+                    WEDDING
                   </span>
                 </div>
               </div>
