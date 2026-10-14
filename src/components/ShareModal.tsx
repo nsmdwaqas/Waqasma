@@ -14,10 +14,28 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
   const [copied, setCopied] = useState(false);
   const t = translations[lang];
 
+  const getPublicShareUrl = (): string => {
+    if (typeof window === 'undefined') return 'https://ais-pre-fwru2o6zrcaaozjoec3zxz-933593385806.asia-east1.run.app';
+    let url = window.location.href;
+    // Map internal AI Studio development URLs to public preview so WhatsApp and guests can access without login
+    if (url.includes('ais-dev-')) {
+      url = url.replace('ais-dev-', 'ais-pre-');
+    }
+    try {
+      const u = new URL(url);
+      u.search = '';
+      u.hash = '';
+      return u.toString();
+    } catch {
+      return url;
+    }
+  };
+
+  const currentUrl = getPublicShareUrl();
+
   useEffect(() => {
     if (isOpen) {
-      const inviteUrl = window.location.href;
-      QRCode.toDataURL(inviteUrl, {
+      QRCode.toDataURL(currentUrl, {
         width: 320,
         margin: 2,
         color: {
@@ -28,11 +46,9 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
         .then((url) => setQrDataUrl(url))
         .catch((err) => console.error('Failed to generate QR code', err));
     }
-  }, [isOpen]);
+  }, [isOpen, currentUrl]);
 
   if (!isOpen) return null;
-
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   const handleWhatsAppShare = () => {
     const message = t.whatsappMessage.includes('{link}')

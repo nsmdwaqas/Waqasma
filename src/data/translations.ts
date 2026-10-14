@@ -25,6 +25,7 @@ export interface TranslationData {
   nikkahDesc: string;
   valimaTitle: string;
   valimaTime: string;
+  afterZuharNote: string;
   valimaVenue: string;
   valimaDesc: string;
   countdownDaysLeft: string;
@@ -93,7 +94,8 @@ export const translations: Record<Language, TranslationData> = {
     nikkahVenue: "Choti Masjid, Ambur",
     nikkahDesc: "The sacred solemnization of marriage according to the Sunnah of Prophet Muhammad (ﷺ).",
     valimaTitle: "Valima Reception",
-    valimaTime: "12:00 PM (After Zuhar Salah)",
+    valimaTime: "12:00 PM",
+    afterZuharNote: "(After Zuhar)",
     valimaVenue: "Buwa Shaadi Mahal, Ambur",
     valimaDesc: "The wedding feast celebration with family, loved ones, and esteemed guests.",
     countdownDaysLeft: "Days to Go",
@@ -160,7 +162,8 @@ export const translations: Record<Language, TranslationData> = {
     nikkahVenue: "چھوٹی مسجد، امبور",
     nikkahDesc: "سنتِ نبوی (ﷺ) کے مطابق تقریبِ نکاح کا پاکیزہ انعقاد۔",
     valimaTitle: "تقریبِ ولیمہ",
-    valimaTime: "دوپہر ۱۲:۰۰ بجے (بعد نمازِ ظہر)",
+    valimaTime: "دوپہر ۱۲:۰۰ بجے",
+    afterZuharNote: "(بعد نمازِ ظہر)",
     valimaVenue: "بووا شادی محل، امبور",
     valimaDesc: "معزز مہمانوں کے ساتھ پرمسرت ضیافتِ ولیمہ۔",
     countdownDaysLeft: "دن باقی ہیں",
@@ -227,7 +230,8 @@ export const translations: Record<Language, TranslationData> = {
     nikkahVenue: "சோட்டி மஸ்ஜித், ஆம்பூர்",
     nikkahDesc: "நபிகள் நாயகம் (ஸல்) அவர்களின் புனித சுன்னத்தின்படி நிக்காஹ் வைபவம் நடைபெறும்.",
     valimaTitle: "வலீமா வரவேற்பு விருந்து",
-    valimaTime: "நண்பகல் 12:00 மணி (ளுஹர் தொழுகைக்குப் பின்)",
+    valimaTime: "நண்பகல் 12:00 மணி",
+    afterZuharNote: "(ளுஹர் தொழுகைக்குப் பின்)",
     valimaVenue: "புவா ஷாதி மஹால், ஆம்பூர்",
     valimaDesc: "உற்றார், உறவினர்கள் மற்றும் நண்பர்களுக்கான திருமண விருந்து உபசரிப்பு.",
     countdownDaysLeft: "நாட்கள் மீதமுள்ளன",

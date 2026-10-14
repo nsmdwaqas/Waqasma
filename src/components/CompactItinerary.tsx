@@ -104,9 +104,9 @@ export const CompactItinerary: React.FC<CompactItineraryProps> = ({ lang }) => {
               </div>
               <p className="font-playfair text-sm sm:text-base font-bold text-white flex items-center gap-1">
                 <Clock className="w-3 h-3 text-[#D4AF37]" />
-                <span>12:00 PM</span>
+                <span>{t.valimaTime}</span>
                 <span className="text-[10px] text-neutral-400 font-normal ml-1">
-                  (After Zuhar)
+                  {t.afterZuharNote}
                 </span>
               </p>
               <p className="text-[11px] text-[#FDE68A] font-medium flex items-center gap-1 mt-0.5">
