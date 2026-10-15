@@ -12,22 +12,16 @@ interface ShareModalProps {
 export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang }) => {
   const [qrDataUrl, setQrDataUrl] = useState<string>('');
   const [copied, setCopied] = useState(false);
-  const [useDevLink, setUseDevLink] = useState(false);
   const t = translations[lang];
 
-  const isDevHost = typeof window !== 'undefined' && window.location.hostname.includes('ais-dev-');
-
   const getPublicShareUrl = (): string => {
-    if (typeof window === 'undefined') return 'https://ais-pre-fwru2o6zrcaaozjoec3zxz-933593385806.asia-east1.run.app';
+    if (typeof window === 'undefined') return 'https://ais-dev-fwru2o6zrcaaozjoec3zxz-933593385806.asia-east1.run.app';
     let url = window.location.href;
-    if (!useDevLink && url.includes('ais-dev-')) {
-      url = url.replace('ais-dev-', 'ais-pre-');
-    }
     try {
       const u = new URL(url);
       u.search = '';
       u.hash = '';
-      return u.toString();
+      return u.toString().replace(/\/$/, '');
     } catch {
       return url;
     }
@@ -149,23 +143,13 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, lang })
           </button>
         </div>
 
-        {/* Dev Host Helper Note */}
-        {isDevHost && (
-          <div className="mb-3 p-2 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[10px] text-neutral-300 text-left">
-            <p className="leading-tight">
-              <span className="text-[#D4AF37] font-bold">Important:</span> Tap <strong className="text-white">Share</strong> in the top-right AI Studio header to publish the public guest link so WhatsApp & iPhones can preview without login.
-            </p>
-            <div className="mt-1.5 flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setUseDevLink(!useDevLink)}
-                className="text-[10px] underline text-[#D4AF37] cursor-pointer"
-              >
-                {useDevLink ? 'Switch to Public Guest link' : 'Switch to direct Dev URL'}
-              </button>
-            </div>
-          </div>
-        )}
+        {/* Preview Readiness Badge */}
+        <div className="mb-3 p-2 rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[10px] text-neutral-300 text-left flex items-start gap-2">
+          <span className="text-[#10B981] text-xs">●</span>
+          <p className="leading-tight">
+            <span className="text-[#D4AF37] font-semibold">Meta Preview Active:</span> Invitation image, title & ceremony details will appear automatically when shared on WhatsApp, Instagram, Telegram & iMessage.
+          </p>
+        </div>
 
         {/* Action Buttons */}
         <div className="space-y-2">
